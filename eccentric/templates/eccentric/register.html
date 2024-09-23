@@ -1,0 +1,34 @@
+
+{% extends 'eccentric/home.html' %}
+{% block logging %}
+
+<form method="post" action="{% url 'register' %}">
+	<h2>Register</h2>
+    {% csrf_token %}
+    <div>
+		<label> User Name<br>
+			{{ form.username }}
+		</label>
+	</div>
+	<br>
+	<div>
+		<label> Email<br>
+			{{ form.email }}
+		</label>
+	</div>
+	<br>
+	<div>
+		<label> Password<br>
+			{{ form.password1 }}
+		</label>
+	</div>
+	<br>
+	<div>
+		<label> Confirm Password <br>
+			{{ form.password2 }}
+		</label>
+	</div>
+	<br>
+    <button type="submit">Register</button>
+</form>
+{% endblock %}

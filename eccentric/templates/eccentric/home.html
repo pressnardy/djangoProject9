@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	{% load static %}
+	<title>Eccentric Insure</title>
+	<link href="{% static 'eccentric/home.css' %}" rel="stylesheet">
+</head>
+<body>
+	<nav>
+		<div class="title">Eccentric Insure</div>
+		<div class="buttons">
+			<form action="{% url 'login' %}" method="GET">
+				<button id="login" type="submit">Login</button>
+			</form>
+			<form action="{% url 'register' %}">
+				<button id="register" type="submit">Register</button>
+			</form>
+			<form action="{% url 'logout' %}">
+				<button id="logout" type="submit">Logout</button>
+			</form>
+		</div>
+	</nav>
+	<section id="logging">
+		{% block logging %}
+		{% endblock %}
+	</section>
+	<footer>
+	footer
+	</footer>
+</body>
+</html>
+

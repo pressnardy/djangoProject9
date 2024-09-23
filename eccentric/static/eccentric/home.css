@@ -1,0 +1,68 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+}
+
+.title {
+    font-size: 24px;
+}
+
+nav > .buttons{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+    padding: 0 16px;
+
+}
+
+button {
+    font-size: 16px;
+}
+
+section#logging {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+label {
+    gap: 16px;
+    font-size: 24px;
+}
+input.input-text {
+    font-size: 24px;
+    min-width: 400px;
+    padding: 2px 4px;
+}
+input.form-control, input {
+    font-size: 24px;
+    min-width: 400px;
+    padding: 2px 4px;
+}
+
+button.form-submit {
+    font-size: 24px;
+    padding: 4px 8px;
+}
+
+footer {
+    background: black;
+    height: 50px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: black;
+    padding: 16px;
+    color: white;
+    justify-self: flex-end;
+}
