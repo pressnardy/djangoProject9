@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	{% load static %}
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" href="{% static 'clients/index.css' %}">
+	<title>Title</title>
+</head>
+<body>
+<nav>
+	<div class="profile">
+		Profile
+	</div>
+	<div class="logo">
+		Eccentric Suit
+	</div>
+	<div class="logout">
+		Log out
+	</div>
+</nav>
+<section id="section-search" style="display: none">
+	<div class="search-wrapper">
+		<form id="search-form" action="{% url 'clients:search' %}">
+			{% csrf_token %}
+			<div class="seach-by sf-element">
+				<select name="search-by" class="sf-element">
+					<option>Name</option>
+					<option>Reg Number</option>
+					<option>Policy Number</option>
+					<option>Start Date</option>
+				</select>
+			</div>
+			<div>
+				<input name="query" id="search-value" class="seach-input sf-element" type="text" placeholder="Type">
+				</input>
+			</div>
+			<div>
+				<button type="submit" id="search-button" class="sf-element">Search</button>
+			</div>
+		</form>
+	</div>
+</section>
+
+<section id="clients">
+	<div class="clients-wrapper">
+		<div class="title">
+			Clients
+		</div>
+		<br>
+		<div class="all-clients">
+			{% for client in clients %}
+				<form action="{% url 'clients:edit_client' client.id %}" method="get">
+					{% csrf_token %}
+				<div class="client-details">
+					<div class="client-detail client-name">
+						<div>Name</div>
+						<div>Cassim Pressnardy</div>
+					</div>
+					<div class="client-detail policy-no">
+						<div>Policy Number</div>
+						<div>{{ client.policy_number }}</div>
+					</div>
+					<div class="client-detail date">
+						<div>Renewal Date</div>
+						<div>{{ client.renewal_date }}</div>
+					</div>
+
+					<div class="client-detail amount">
+						<div>Amount</div>
+						<div>{{ client.amount }}</div>
+					</div>
+					<div class="client-detail amount">
+						<button>View/Edit</button>
+					</div>
+				</div>
+				<br>
+			</form>
+			{% endfor %}
+		</div>
+	</div>
+</section>
+
+<footer>
+	<div class="clients">
+		Clients
+	</div>
+	<div class="search">
+		Search
+	</div>
+	<div class="reminder">
+		Reminders
+	</div>
+</footer>
+</body>
+</html>
+
+

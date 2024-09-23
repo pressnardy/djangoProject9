@@ -1,0 +1,237 @@
+
+:root {
+    --purple: #56013b;
+    --dark-blue: #1bbbef;
+    --light-blue: #0680a8;
+    --background-baige: rgb(226, 238, 237);
+    --thin: 100;
+
+}
+
+html, body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+body {
+    background: #1bbbef;
+}
+
+nav {
+    height: 50px;
+    background: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 16px;
+    align-items: center;
+
+}
+
+input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+    background: none;
+}
+
+
+#clients, #section-search {
+    padding: 8px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+}
+
+
+#registration-form, .clients-wrapper, #edit_form{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+
+}
+
+.form-container, .client-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.clients-wrapper, .client-wrapper {
+    border: 1px solid var(--light-blue);
+    padding: 16px;
+    border-radius: 16px;
+    background: var(--background-baige);
+
+}
+
+.input-text {
+    font-size: 18px;
+    width: 340px;
+    border: none;
+    border-bottom: 1px solid var(--light-blue);
+    padding: 8px;
+}
+
+
+.input-date {
+    font-size: 18px;
+    width: 245px;
+    border: none;
+    border-bottom: 1px solid var(--light-blue);
+    padding: 8px;
+    text-align: right;
+
+}
+
+
+
+.title {
+    font-size: 28px;
+    color: black;
+    font-weight: var(--thin);
+    padding-top: 16px;
+    padding-left: 4px;
+    text-align: center;
+
+}
+
+.column-headings {
+    display: flex;
+    gap: 16px;
+    /*flex-direction: ;*/
+}
+
+.client-details {
+    display: flex;
+    gap: 16px;
+    /*flex-wrap: wrap;*/
+    /*max-width: 600px;*/
+
+    border: 1px solid red;
+
+}
+
+.client-name {
+    min-width: 150px;
+    border: 1px solid black;
+    white-space: nowrap;
+}
+
+
+
+.reg-no, .policy-no, .amount {
+    width: 120px;
+    border: 1px solid black;
+    white-space: nowrap;
+}
+
+.date {
+    min-width: 120px;
+    border: 1px solid black;
+    white-space: nowrap;
+}
+
+
+.client-detail {
+    /*width: fit-content;*/
+    /*min-width: fit-content;*/
+    /*border: 1px solid red;*/
+    padding: 4px 8px;
+    border-radius: 8px;
+
+}
+
+.date-label {
+    font-size: 18px;
+    color: #8a8a8a;
+}
+
+.submit {
+    font-size: 28px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    margin: 16px 0;
+    border: 1px solid white;
+    background: var(--light-blue);
+}
+
+.submit:hover {
+    background: none;
+    color: var(--light-blue);
+    border: 1px solid var(--light-blue);
+
+}
+
+.date-label #renewal-date {
+    width: 230px;
+}
+
+
+.date-label {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+#amount {
+    text-align: right;
+    padding: 0 8px;
+}
+
+/*search form*/
+#search-form {
+    display: flex;
+    min-width: fit-content;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: nowrap;
+    border: 1px solid red;
+    width: 100%;
+}
+
+input#query {
+    border: 1px solid black;
+}
+
+.sf-element {
+    border-radius: 8px;
+    background: #1bbbef;
+    display: flex;
+
+}
+.category {
+    border: 1px solid red;
+}
+
+footer {
+    background: black;
+    height: 50px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: black;
+    padding: 16px;
+    color: white;
+    justify-self: flex-end;
+}
+
+footer {
+    height: 50px;
+    background: #999999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    justify-self: flex-end;
+}

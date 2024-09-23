@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	{% load static %}
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" href="{% static 'clients/index.css' %}">
+	<script defer src="{% static 'clients/index.js' %}"></script>
+	<title>Title</title>
+</head>
+<body>
+<nav>
+	<div class="profile">
+
+	</div>
+	<div class="logo">
+
+	</div>
+	<div class="logout">
+
+	</div>
+</nav>
+<section id="client">
+	<div class="client-wrapper">
+		<div class="title">
+			Enter Client Details
+		</div>
+		<br>
+		<div class="form-container">
+			<form id="registration-form" action="{% url 'clients:register' %}" method="POST">
+				{% csrf_token %}
+				<div class="form-element">
+					<label>
+						{{ form.name }}
+					</label>
+				</div>
+				<div class="form-element">
+					<label>
+						{{ form.registration_number }}
+					</label>
+				</div>
+				<div class="form-element">
+					<label>
+						{{ form.policy_number }}
+					</label>
+				</div>
+				<div class="form-element">
+					<label class="date-label">Start Date
+						{{ form.start_date }}
+					</label>
+				</div>
+				<div class="form-element">
+					<label class="date-label">
+						<span>End Date</span>
+						{{ form.end_date }}
+					</label>
+				</div>
+				<div class="form-element">
+					<label class="date-label">
+						<span>Renewal Date</span>
+						{{ form.renewal_date }}
+					</label>
+				</div>
+				<div class="form-element">
+					<label>
+						{{ form.amount }}
+					</label>
+				</div>
+				<div class="form-element">
+					<label>
+						<input class="submit" type="submit" value="Add">
+					</label>
+				</div>
+			</form>
+			<form action="{% url 'clients:index' %}">
+				<label>
+					<input class="submit" type="submit" value="Done">
+				</label>
+			</form>
+			<div class="message">
+			{% block message %}
+			{% endblock %}
+			</div>
+		</div>
+	</div>
+</section>
+<footer>
+	<div class="clients">
+
+	</div>
+	<div class="search">
+
+	</div>
+	<div class="reminder">
+
+	</div>
+</footer>
+</body>
+</html>
